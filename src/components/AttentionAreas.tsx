@@ -59,11 +59,11 @@ export default function AttentionAreas() {
   const [activeTab, setActiveTab] = useState(areas[0].id);
 
   return (
-    <Section id="areas" className="bg-white py-20">
+    <Section id="areas" className="bg-white dark:bg-gray-950 py-20 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Nuestros Servicios</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Áreas de Atención</h2>
+          <span className="text-primary dark:text-primary-light font-bold tracking-wider uppercase text-sm mb-2 block">Nuestros Servicios</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Áreas de Atención</h2>
           <div className="w-24 h-1.5 bg-primary mx-auto rounded-full"></div>
         </div>
 
@@ -77,7 +77,7 @@ export default function AttentionAreas() {
                 "flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border-2",
                 activeTab === area.id
                   ? "bg-primary text-white border-primary shadow-xl scale-105 ring-4 ring-primary/20"
-                  : "bg-white text-gray-500 border-gray-100 hover:border-primary/30 hover:text-primary hover:bg-gray-50"
+                  : "bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-800 hover:border-primary/30 dark:hover:border-primary/30 hover:text-primary dark:hover:text-primary-light hover:bg-gray-50 dark:hover:bg-gray-800"
               )}
             >
               <area.icon size={22} />
@@ -97,35 +97,35 @@ export default function AttentionAreas() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="bg-gray-50 rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100"
+                  className="bg-gray-50 dark:bg-gray-900 rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-800"
                 >
                   <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* Left Column: Info */}
                     <div>
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="p-4 bg-white rounded-2xl shadow-md text-primary border border-gray-100">
+                        <div className="p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-md text-primary dark:text-primary-light border border-gray-100 dark:border-gray-700">
                           <area.icon size={40} strokeWidth={1.5} />
                         </div>
                         <div>
-                          <h3 className="text-3xl font-bold text-gray-900">{area.title}</h3>
-                          <p className="text-primary font-medium">Servicio Institucional</p>
+                          <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{area.title}</h3>
+                          <p className="text-primary dark:text-primary-light font-medium">Servicio Institucional</p>
                         </div>
                       </div>
                       
-                      <p className="text-gray-600 mb-8 text-lg leading-relaxed border-l-4 border-primary/20 pl-4">
+                      <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg leading-relaxed border-l-4 border-primary/20 dark:border-primary/40 pl-4">
                         {area.description}
                       </p>
 
-                      <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                        <h4 className="font-bold text-gray-900 mb-6 flex items-center gap-2 text-xl">
-                          <Activity className="text-primary" size={24} /> 
+                      <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2 text-xl">
+                          <Activity className="text-primary dark:text-primary-light" size={24} /> 
                           Servicios Principales
                         </h4>
                         <ul className="space-y-4">
                           {area.services.map((service, i) => (
-                            <li key={i} className="flex items-start gap-3 text-gray-700 group">
-                              <CheckCircle2 className="text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" size={18} />
-                              <span className="group-hover:text-gray-900 transition-colors">{service}</span>
+                            <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300 group">
+                              <CheckCircle2 className="text-primary dark:text-primary-light mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" size={18} />
+                              <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">{service}</span>
                             </li>
                           ))}
                         </ul>
@@ -134,20 +134,20 @@ export default function AttentionAreas() {
 
                     {/* Right Column: Details */}
                     <div className="space-y-6">
-                      <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-lg">
-                          <Users className="text-primary" size={22} /> 
+                      <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 text-lg">
+                          <Users className="text-primary dark:text-primary-light" size={22} /> 
                           A quién atiende
                         </h4>
-                        <p className="text-gray-600 leading-relaxed">{area.target}</p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{area.target}</p>
                       </div>
 
-                      <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-lg">
-                          <Clock className="text-primary" size={22} /> 
+                      <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 text-lg">
+                          <Clock className="text-primary dark:text-primary-light" size={22} /> 
                           Horarios de Atención
                         </h4>
-                        <p className="text-gray-600 font-medium">{area.schedule}</p>
+                        <p className="text-gray-600 dark:text-gray-300 font-medium">{area.schedule}</p>
                       </div>
 
                       <div className="bg-gradient-to-br from-primary to-primary-dark text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">

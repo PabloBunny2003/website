@@ -40,31 +40,31 @@ export default function Timeline() {
   const canNext = startIndex + itemsPerPage < milestones.length;
 
   return (
-    <Section id="historia" className="bg-white">
+    <Section id="historia" className="bg-white dark:bg-gray-950 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Nuestra Historia</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-primary-light mb-4">Nuestra Historia</h2>
           <div className="w-24 h-1.5 bg-primary mx-auto rounded-full"></div>
-          <p className="mt-4 text-gray-500">Un legado de servicio a través de las décadas.</p>
+          <p className="mt-4 text-gray-500 dark:text-gray-400">Un legado de servicio a través de las décadas.</p>
         </div>
 
-        {/* Mobile View (Vertical) - Visible only on small screens */}
-        <div className="md:hidden relative space-y-8 pl-8 border-l-2 border-primary/20 ml-4">
+        {/* Mobile View (Vertical) */}
+        <div className="md:hidden relative space-y-8 pl-8 border-l-2 border-primary/20 dark:border-primary/40 ml-4">
           {milestones.map((item, index) => (
             <div key={index} className="relative">
               {/* Dot */}
-              <div className="absolute -left-[41px] top-0 w-6 h-6 bg-primary rounded-full border-4 border-white shadow-md"></div>
+              <div className="absolute -left-[41px] top-0 w-6 h-6 bg-primary rounded-full border-4 border-white dark:border-gray-900 shadow-md"></div>
               
-              <div className="bg-gray-50 p-6 rounded-lg shadow-sm border-l-4 border-primary">
-                <span className="text-primary font-bold text-xl block mb-1">{item.year}</span>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+              <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-sm border-l-4 border-primary dark:border-primary-light transition-colors">
+                <span className="text-primary dark:text-primary-light font-bold text-xl block mb-1">{item.year}</span>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Desktop View (Horizontal Carousel) - Visible only on medium+ screens */}
+        {/* Desktop View (Horizontal Carousel) */}
         <div className="hidden md:flex items-center gap-4 relative py-10">
             
             {/* Botón Anterior */}
@@ -74,8 +74,8 @@ export default function Timeline() {
                 className={cn(
                     "p-3 rounded-full shadow-lg border transition-all z-20 flex-shrink-0",
                     canPrev 
-                        ? "bg-white text-primary hover:bg-primary hover:text-white border-primary/20 hover:scale-110" 
-                        : "bg-gray-50 text-gray-300 border-transparent cursor-not-allowed opacity-50"
+                        ? "bg-white dark:bg-gray-800 text-primary dark:text-primary-light hover:bg-primary hover:text-white dark:hover:bg-primary-light dark:hover:text-white border-primary/20 dark:border-gray-700 hover:scale-110" 
+                        : "bg-gray-50 dark:bg-gray-900 text-gray-300 dark:text-gray-700 border-transparent cursor-not-allowed opacity-50"
                 )}
                 aria-label="Ver hitos anteriores"
             >
@@ -85,13 +85,11 @@ export default function Timeline() {
             {/* Contenedor del Timeline */}
             <div className="flex-grow relative min-h-[480px] overflow-hidden">
                 {/* Línea Central de Fondo */}
-                <div className="absolute top-1/2 left-0 w-full h-1 bg-primary/10 -translate-y-1/2 z-0 rounded-full"></div>
+                <div className="absolute top-1/2 left-0 w-full h-1 bg-primary/10 dark:bg-gray-800 -translate-y-1/2 z-0 rounded-full"></div>
                 
                 <div className="grid grid-cols-4 gap-0 h-full w-full">
                     <AnimatePresence mode='popLayout'>
                         {visibleMilestones.map((item, index) => {
-                            // Usamos el índice absoluto para determinar si va arriba o abajo
-                            // Esto asegura que el patrón se mantenga consistente al navegar
                             const absoluteIndex = startIndex + index;
                             const isEven = absoluteIndex % 2 === 0;
                             
@@ -108,13 +106,13 @@ export default function Timeline() {
                                     {/* Sección Superior (Contenido para pares) */}
                                     <div className="flex flex-col justify-end pb-8 relative">
                                         {isEven && (
-                                            <div className="bg-gray-50 p-5 rounded-xl shadow-sm border-b-4 border-primary text-center hover:-translate-y-2 transition-all duration-300 relative z-10 h-auto flex flex-col justify-center hover:shadow-md hover:bg-white group-hover:border-primary-light">
-                                                <span className="text-primary font-bold text-2xl block mb-2">{item.year}</span>
-                                                <h3 className="font-bold text-gray-900 mb-2 leading-tight text-lg">{item.title}</h3>
-                                                <p className="text-sm text-gray-600 leading-relaxed line-clamp-4">{item.description}</p>
+                                            <div className="bg-gray-50 dark:bg-gray-900 p-5 rounded-xl shadow-sm border-b-4 border-primary dark:border-primary-light text-center hover:-translate-y-2 transition-all duration-300 relative z-10 h-auto flex flex-col justify-center hover:shadow-md hover:bg-white dark:hover:bg-gray-800 group-hover:border-primary-light">
+                                                <span className="text-primary dark:text-primary-light font-bold text-2xl block mb-2">{item.year}</span>
+                                                <h3 className="font-bold text-gray-900 dark:text-white mb-2 leading-tight text-lg">{item.title}</h3>
+                                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{item.description}</p>
                                                 
                                                 {/* Línea conectora */}
-                                                <div className="absolute left-1/2 -bottom-8 w-0.5 h-8 bg-primary/30 -translate-x-1/2"></div>
+                                                <div className="absolute left-1/2 -bottom-8 w-0.5 h-8 bg-primary/30 dark:bg-primary/50 -translate-x-1/2"></div>
                                             </div>
                                         )}
                                     </div>
@@ -122,21 +120,21 @@ export default function Timeline() {
                                     {/* Marcador Central (Eje) */}
                                     <div className="relative flex items-center justify-center h-8 z-10">
                                         <div className={cn(
-                                            "w-5 h-5 bg-primary rounded-full border-4 border-white shadow-md transition-all duration-300 group-hover:scale-150 group-hover:bg-primary-dark",
-                                            "ring-4 ring-primary/10"
+                                            "w-5 h-5 bg-primary rounded-full border-4 border-white dark:border-gray-950 shadow-md transition-all duration-300 group-hover:scale-150 group-hover:bg-primary-dark",
+                                            "ring-4 ring-primary/10 dark:ring-primary/20"
                                         )}></div>
                                     </div>
 
                                     {/* Sección Inferior (Contenido para impares) */}
                                     <div className="flex flex-col justify-start pt-8 relative">
                                         {!isEven && (
-                                            <div className="bg-gray-50 p-5 rounded-xl shadow-sm border-t-4 border-primary text-center hover:translate-y-2 transition-all duration-300 relative z-10 h-auto flex flex-col justify-center hover:shadow-md hover:bg-white group-hover:border-primary-light">
+                                            <div className="bg-gray-50 dark:bg-gray-900 p-5 rounded-xl shadow-sm border-t-4 border-primary dark:border-primary-light text-center hover:translate-y-2 transition-all duration-300 relative z-10 h-auto flex flex-col justify-center hover:shadow-md hover:bg-white dark:hover:bg-gray-800 group-hover:border-primary-light">
                                                 {/* Línea conectora */}
-                                                <div className="absolute left-1/2 -top-8 w-0.5 h-8 bg-primary/30 -translate-x-1/2"></div>
+                                                <div className="absolute left-1/2 -top-8 w-0.5 h-8 bg-primary/30 dark:bg-primary/50 -translate-x-1/2"></div>
 
-                                                <span className="text-primary font-bold text-2xl block mb-2">{item.year}</span>
-                                                <h3 className="font-bold text-gray-900 mb-2 leading-tight text-lg">{item.title}</h3>
-                                                <p className="text-sm text-gray-600 leading-relaxed line-clamp-4">{item.description}</p>
+                                                <span className="text-primary dark:text-primary-light font-bold text-2xl block mb-2">{item.year}</span>
+                                                <h3 className="font-bold text-gray-900 dark:text-white mb-2 leading-tight text-lg">{item.title}</h3>
+                                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{item.description}</p>
                                             </div>
                                         )}
                                     </div>
@@ -154,8 +152,8 @@ export default function Timeline() {
                 className={cn(
                     "p-3 rounded-full shadow-lg border transition-all z-20 flex-shrink-0",
                     canNext 
-                        ? "bg-white text-primary hover:bg-primary hover:text-white border-primary/20 hover:scale-110" 
-                        : "bg-gray-50 text-gray-300 border-transparent cursor-not-allowed opacity-50"
+                        ? "bg-white dark:bg-gray-800 text-primary dark:text-primary-light hover:bg-primary hover:text-white dark:hover:bg-primary-light dark:hover:text-white border-primary/20 dark:border-gray-700 hover:scale-110" 
+                        : "bg-gray-50 dark:bg-gray-900 text-gray-300 dark:text-gray-700 border-transparent cursor-not-allowed opacity-50"
                 )}
                 aria-label="Ver hitos siguientes"
             >
@@ -164,14 +162,14 @@ export default function Timeline() {
 
         </div>
         
-        {/* Indicador de progreso (opcional) */}
+        {/* Indicador de progreso */}
         <div className="hidden md:flex justify-center mt-4 gap-2">
             {Array.from({ length: Math.ceil(milestones.length - itemsPerPage + 1) }).map((_, idx) => (
                 <div 
                     key={idx} 
                     className={cn(
                         "h-1.5 rounded-full transition-all duration-300",
-                        idx === startIndex ? "w-8 bg-primary" : "w-2 bg-gray-200"
+                        idx === startIndex ? "w-8 bg-primary" : "w-2 bg-gray-200 dark:bg-gray-700"
                     )}
                 />
             ))}

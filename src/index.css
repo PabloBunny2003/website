@@ -12,6 +12,7 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply transition-colors duration-300 ease-in-out; /* Transición suave global */
 }
 
 /* Swiper Customization for JPCT Theme */
@@ -28,6 +29,13 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode adjustments for Swiper arrows */
+.dark .swiper-button-next, .dark .swiper-button-prev {
+  background-color: rgba(31, 41, 55, 0.9); /* gray-800 */
+  color: #fff !important;
+  border: 1px solid #374151;
+}
+
 .swiper-button-next:after, .swiper-button-prev:after {
   font-size: 20px !important;
   font-weight: bold;
@@ -40,6 +48,10 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #111827;
 }
 
 ::-webkit-scrollbar-thumb {
