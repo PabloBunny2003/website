@@ -7,8 +7,8 @@ import { ArrowRight } from 'lucide-react';
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2832&auto=format&fit=crop" 
-              alt="JPCT Background" 
+              src="/JPCT.jpg" 
+              alt="Fachada JPCT" 
               className="w-full h-full object-cover"
             />
             {/* Overlay Vino Semitransparente */}
