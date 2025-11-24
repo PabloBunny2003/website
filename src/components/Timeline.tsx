@@ -91,7 +91,7 @@ export default function Timeline() {
             </button>
 
             {/* Contenedor del Timeline */}
-            <div className="flex-grow relative min-h-[480px] overflow-hidden">
+            <div className="flex-grow relative min-h-[360px] overflow-hidden">
                 {/* Línea Central de Fondo */}
                 <div className="absolute top-1/2 left-0 w-full h-1 bg-primary/10 dark:bg-gray-800 -translate-y-1/2 z-0 rounded-full"></div>
                 

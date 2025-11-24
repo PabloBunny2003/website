@@ -54,7 +54,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">Ubicación</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Calle Hidalgo No. 300, Colonia Centro,<br />Teziutlán, Puebla. CP 73800</p>
+                  <p className="text-gray-600 dark:text-gray-400">Av. Benito Juárez 301, Centro,<br />Teziutlán, Puebla. CP 73800</p>
                 </div>
               </div>
 
@@ -63,9 +63,25 @@ export default function Contact() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">Teléfono</h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-lg font-medium">(231) 312 0000</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-500">Lunes a Viernes, 9am - 5pm</p>
+                  <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">Teléfonos</h4>
+                  <div className="text-gray-600 dark:text-gray-400 text-lg font-medium space-y-1">
+                    <a href="tel:+522313120106" className="block hover:underline">231 312 0106</a>
+                    <a href="tel:+522313121508" className="block hover:underline">231 312 1508</a>
+                    <a href="tel:+522313124504" className="block hover:underline">231 312 4504</a>
+                  </div>
+
+                  <div className="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} />
+                      <span className="font-medium">Administración:</span>
+                      <span> Lun–Vie 9:00–18:00</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} />
+                      <span className="font-medium">Urgencias:</span>
+                      <span> 24 horas, todos los días</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -75,22 +91,34 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">Correo Electrónico</h4>
-                  <a href="mailto:contacto@jpct.org.mx" className="text-primary dark:text-primary-light font-medium hover:underline">contacto@jpct.org.mx</a>
+                  <a href="mailto:jpcteziutlan@gmail.com" className="text-primary dark:text-primary-light font-medium hover:underline">jpcteziutlan@gmail.com</a>
                 </div>
               </div>
             </div>
 
             <div className="flex-grow min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white dark:border-gray-800">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.164671736646!2d-97.36166668508977!3d19.81516668666815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85da97b1a1a1a1a1%3A0x1a1a1a1a1a1a1a1a!2sTeziutl%C3%A1n%2C%20Pue.!5e0!3m2!1ses-419!2smx!4v1620000000000!5m2!1ses-419!2smx" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
+              {/* Mapa con marcador fijo en la ubicación de JPCT (lat, lng) */}
+              <iframe
+                src="https://www.google.com/maps?q=Av.+Benito+Ju%C3%A1rez+301,+Centro,+73800+Teziutl%C3%A1n,+Pue.&z=16&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
                 loading="lazy"
                 title="Mapa de Ubicación JPCT"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
               ></iframe>
+
+              <div className="p-3 bg-transparent text-center">
+                <a
+                  href="https://www.google.com/maps?q=Av.+Benito+Ju%C3%A1rez+301,+Centro,+73800+Teziutl%C3%A1n,+Pue."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 bg-white dark:bg-gray-900 text-primary dark:text-primary-light font-medium px-4 py-2 rounded-lg border border-gray-100 dark:border-gray-800 hover:bg-primary hover:text-white transition-colors"
+                >
+                  Abrir en Google Maps
+                </a>
+              </div>
             </div>
           </div>
         </div>

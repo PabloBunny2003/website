@@ -11,7 +11,8 @@ import { motion } from 'framer-motion';
 
     export const Section = ({ children, id, className, delay = 0 }: SectionProps) => {
       return (
-        <section id={id} className={cn("py-16 md:py-24", className)}>
+        // Reduje el padding vertical por defecto para evitar grandes espacios en blanco entre secciones
+        <section id={id} className={cn("py-12 md:py-16", className)}>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
