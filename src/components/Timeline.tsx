@@ -5,18 +5,26 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const milestones = [
-  { year: '1905', title: 'Fundación', description: 'Se establece la Junta Particular de Caridad con el objetivo de ayudar a los más necesitados.' },
-  { year: '1920', title: 'Primera Sede', description: 'Adquisición del inmueble histórico que alberga nuestras oficinas centrales en el centro de Teziutlán.' },
-  { year: '1945', title: 'Consolidación', description: 'Se establecen los estatutos oficiales y se amplía la red de benefactores.' },
-  { year: '1950', title: 'Primer Hospital', description: 'Inauguración de las primeras instalaciones médicas dedicadas a la comunidad.' },
-  { year: '1965', title: 'Voluntariado', description: 'Se formaliza el grupo de damas voluntarias para apoyo en asistencia social.' },
-  { year: '1985', title: 'Expansión', description: 'Ampliación de servicios incluyendo velatorios y asistencia social integral.' },
-  { year: '1998', title: 'Reconocimiento', description: 'Premio estatal al mérito altruista por la labor ininterrumpida en la sierra nororiental.' },
-  { year: '2005', title: 'Centenario', description: 'Celebración de 100 años de servicio ininterrumpido a la comunidad teziuteca.' },
-  { year: '2010', title: 'Modernización', description: 'Renovación de equipos médicos y reestructuración administrativa del hospital.' },
-  { year: '2018', title: 'Nuevas Áreas', description: 'Apertura de la unidad de rehabilitación física y terapia para pacientes de bajos recursos.' },
-  { year: '2020', title: 'Resiliencia', description: 'Adaptación de protocolos y apoyo extraordinario durante la contingencia sanitaria.' },
-  { year: '2024', title: 'Actualidad', description: 'Continuamos sirviendo con la misma pasión y compromiso que el primer día.' },
+  { year: '1886', title: 'Inicio Solidario', description: 'Constitución de la Junta Particular de Caridad de Teziutlán (JPCT) con el propósito de brindar ayuda social y médica a los más necesitados.' },
+  { year: '1888', title: 'Apoyo Público', description: 'Se organiza la primera colecta en Teziutlán para reunir fondos destinados al sostenimiento de la Junta.' },
+  { year: '1890', title: 'Apertura Médica', description: 'Se establece oficialmente el Hospital Guadalupano, marcando el inicio formal de los servicios de salud para la comunidad.' },
+  { year: '1893', title: 'Base Fija', description: 'La JPCT adquiere el terreno donde actualmente se ubica el hospital, consolidando su presencia física en la región.' },
+  { year: '1900', title: 'Reconocimiento Legal', description: 'La JPCT obtiene personalidad jurídica y se reconoce oficialmente como institución de asistencia privada.' },
+  { year: '1914–1917', title: 'Servicio Humanitario', description: 'Durante la Revolución Mexicana, el hospital atiende a heridos civiles y combatientes en medio de escasez y crisis.' },
+  { year: '1923', title: 'Infraestructura Nueva', description: 'Comienzan las primeras mejoras en equipamiento médico y en las instalaciones del hospital.' },
+  { year: '1935', title: 'Apoyo Vocacional', description: 'Se establecen colaboraciones con congregaciones religiosas dedicadas al cuidado de enfermos y asistencia médica.' },
+  { year: '1950', title: 'Nuevos Servicios', description: 'Se modernizan los servicios médicos y se amplían las áreas de atención general para mayor capacidad hospitalaria.' },
+  { year: '1967–1974', title: 'Obra Jenkins', description: 'Se lleva a cabo una reconstrucción importante del hospital con el auspicio de Fundación Jenkins.' },
+  { year: '1975', title: 'Hospital Renovado', description: 'Se reinaugura el hospital con nuevas áreas quirúrgicas, laboratorios y mejoras estructurales.' },
+  { year: '1975–1984', title: 'Impulso Tepeyac', description: 'La Fundación Tepeyac apoya la ampliación y modernización del hospital durante casi una década.' },
+  { year: '1985–1996', title: 'Apoyo Teziutlán', description: 'Periodo de fortalecimiento institucional con el auspicio de Fundación Teziutlán, asegurando operación y mantenimiento.' },
+  { year: '1997–2008', title: 'Vínculo UPAEP', description: 'Se establece una colaboración estratégica con la UPAEP, fortaleciendo prácticas clínicas y capacitación profesional.' },
+  { year: '2000', title: 'Apoyo Nacional', description: 'Nacional Monte de Piedad y otras instituciones brindan apoyo económico para mejorar servicios y equipamiento.' },
+  { year: '2010', title: 'Salud Comunitaria', description: 'Se implementan campañas médicas gratuitas en Teziutlán y municipios cercanos para ampliar el alcance social.' },
+  { year: '2015', title: 'Registros Digitales', description: 'Se digitaliza parcialmente la información médica y administrativa, mejorando el control de datos.' },
+  { year: '2020', title: 'Área Aislada', description: 'El hospital adapta protocolos sanitarios, habilita zonas de aislamiento y refuerza atención respiratoria durante la pandemia de COVID-19.' },
+  { year: '2023', title: 'Legado Vivo', description: 'La JPCT celebra más de 137 años de labor médica y social continua en la región.' },
+  { year: '2025', title: 'Transformación Total', description: 'Se implementa un nuevo sitio web, migración de datos a SQL Server y dashboards Power BI para mejorar toma de decisiones, comunicación y gestión hospitalaria.' },
 ];
 
 export default function Timeline() {
