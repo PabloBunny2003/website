@@ -58,8 +58,9 @@ export default function Footer() {
 
                 <div className="flex items-start gap-3">
                   <div className="pt-1"><Mail size={16} /></div>
-                  <div>
+                  <div className="flex flex-col">
                     <a href="mailto:jpcteziutlan@gmail.com" className="hover:underline text-gray-300">jpcteziutlan@gmail.com</a>
+                    <a href="mailto:hospguadalupano@prodigy.net.mx" className="hover:underline text-gray-300">hospguadalupano@prodigy.net.mx</a>
                   </div>
                 </div>
 

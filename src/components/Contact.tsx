@@ -91,7 +91,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">Correo Electrónico</h4>
-                  <a href="mailto:jpcteziutlan@gmail.com" className="text-primary dark:text-primary-light font-medium hover:underline">jpcteziutlan@gmail.com</a>
+                  <div className="flex flex-col text-primary dark:text-primary-light font-medium">
+                    <a href="mailto:jpcteziutlan@gmail.com" className="hover:underline">jpcteziutlan@gmail.com</a>
+                    <a href="mailto:hospguadalupano@prodigy.net.mx" className="hover:underline">hospguadalupano@prodigy.net.mx</a>
+                  </div>
                 </div>
               </div>
             </div>
