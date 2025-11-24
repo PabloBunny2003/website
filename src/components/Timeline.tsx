@@ -30,6 +30,7 @@ const milestones = [
 export default function Timeline() {
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerPage = 4; // Número de hitos visibles en escritorio
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
 
   const nextSlide = () => {
     if (startIndex + itemsPerPage < milestones.length) {
@@ -117,7 +118,16 @@ export default function Timeline() {
                                             <div className="bg-gray-50 dark:bg-gray-900 p-5 rounded-xl shadow-sm border-b-4 border-primary dark:border-primary-light text-center hover:-translate-y-2 transition-all duration-300 relative z-10 h-auto flex flex-col justify-center hover:shadow-md hover:bg-white dark:hover:bg-gray-800 group-hover:border-primary-light">
                                                 <span className="text-primary dark:text-primary-light font-bold text-2xl block mb-2">{item.year}</span>
                                                 <h3 className="font-bold text-gray-900 dark:text-white mb-2 leading-tight text-lg">{item.title}</h3>
-                                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{item.description}</p>
+                                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{item.description}</p>
+                                          <div className="mt-3">
+                                            <button
+                                              onClick={() => setModalIndex(absoluteIndex)}
+                                              className="text-sm text-primary hover:underline"
+                                              aria-label={`Leer más sobre ${item.title}`}
+                                            >
+                                              Leer más
+                                            </button>
+                                          </div>
                                                 
                                                 {/* Línea conectora */}
                                                 <div className="absolute left-1/2 -bottom-8 w-0.5 h-8 bg-primary/30 dark:bg-primary/50 -translate-x-1/2"></div>
@@ -142,7 +152,16 @@ export default function Timeline() {
 
                                                 <span className="text-primary dark:text-primary-light font-bold text-2xl block mb-2">{item.year}</span>
                                                 <h3 className="font-bold text-gray-900 dark:text-white mb-2 leading-tight text-lg">{item.title}</h3>
-                                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{item.description}</p>
+                                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{item.description}</p>
+                                            <div className="mt-3">
+                                              <button
+                                                onClick={() => setModalIndex(absoluteIndex)}
+                                                className="text-sm text-primary hover:underline"
+                                                aria-label={`Leer más sobre ${item.title}`}
+                                              >
+                                                Leer más
+                                              </button>
+                                            </div>
                                             </div>
                                         )}
                                     </div>
@@ -182,6 +201,58 @@ export default function Timeline() {
                 />
             ))}
         </div>
+
+        {/* Modal Leer más */}
+        <AnimatePresence>
+          {modalIndex !== null && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            >
+              <div className="absolute inset-0 bg-black/50" onClick={() => setModalIndex(null)} aria-hidden />
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 20, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="relative z-10 max-w-2xl w-full bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6"
+                role="dialog"
+                aria-modal="true"
+              >
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {milestones[modalIndex].title}
+                    </h3>
+                    <p className="text-sm text-primary mt-1">{milestones[modalIndex].year}</p>
+                  </div>
+                  <button
+                    onClick={() => setModalIndex(null)}
+                    className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                    aria-label="Cerrar descripción"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <div className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                  {milestones[modalIndex].description}
+                </div>
+
+                <div className="mt-6 text-right">
+                  <button
+                    onClick={() => setModalIndex(null)}
+                    className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </Section>
   );

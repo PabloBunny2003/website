@@ -31,7 +31,8 @@ export default function Gallery() {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
