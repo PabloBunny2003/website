@@ -1,5 +1,5 @@
 import { Section } from './Section';
-import { Users, HeartHandshake } from 'lucide-react';
+import { Users, Handshake } from 'lucide-react';
 
 export default function About() {
   return (
@@ -34,7 +34,7 @@ export default function About() {
               </div>
               <div className="flex items-start gap-4">
                 <div className="bg-white dark:bg-gray-800 p-3 rounded-full shadow-sm text-primary dark:text-primary-light border dark:border-gray-700">
-                  <HeartHandshake size={24} />
+                  <Handshake size={24} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 dark:text-white">Compromiso</h4>
