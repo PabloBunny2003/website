@@ -15,11 +15,11 @@ export default function About() {
           </div>
           <div className="w-full md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-primary-light mb-6">Quiénes Somos</h2>
-            <p className="text-gray-600 dark:text-gray-300 text-lg mb-6 leading-relaxed">
-              La Junta Particular de Caridad de Teziutlán es un organismo social sin fines de lucro, dedicado a brindar asistencia médica, apoyo moral y servicios funerarios a los sectores más vulnerables de nuestra región.
+            <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
+              La Junta Particular de Caridad de Teziutlán (JPCT) es una organización sin fines de lucro que brinda servicios médicos y sociales a la comunidad teziuteca. A través de la administración del Hospital Guadalupano, ofrece atención accesible y de calidad con un enfoque humano.
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
-              Desde nuestra fundación, hemos trabajado incansablemente para ser un faro de esperanza, gestionando recursos con transparencia y aplicándolos donde más se necesitan.
+              Nuestros valores —solidaridad, compromiso, honestidad y respeto— guían todas nuestras acciones. La JPCT mantiene su vocación de ayuda y servicio para mejorar la calidad de vida de las personas de la región.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
